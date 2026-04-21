@@ -4,322 +4,727 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="index,follow">
-
-<title>Career Compass ｜ 中堅ITキャリアの選択肢と市場価値</title>
-
-<meta name="description" content="企業から報酬を受け取らない独立型キャリア相談。相談料のみで運営し、キャリアの選択肢と市場価値の整理をサポートします。初回90分キャリア診断 19,800円（通常29,800円）。">
-
-assets/career-compass-mark.png
-
-<meta property="og:title" content="Career Compass ｜ 中堅ITキャリアの選択肢と市場価値">
-<meta property="og:description" content="独立型キャリア相談。初回90分キャリア診断 19,800円。">
+<title>Career Compass ｜ 中堅ITの給料伸び悩みから、選択肢と市場価値を上げる相談</title>
+<meta name="description" content="企業から報酬を受け取らない独立型キャリア相談。相談料のみで運営し、希望する将来を実現するための行動を一緒に設計します。【モニター募集中】初回90分キャリア診断 19,800円（通常29,800円）。毎日20:00以降、オンライン対応。">
+<link rel="icon" type="image/png" href="assets/career-compass-mark.png">
+<meta property="og:title" content="Career Compass ｜ 中堅ITの給料伸び悩みから、選択肢と市場価値を上げる相談">
+<meta property="og:description" content="【モニター募集中】独立型キャリア相談。初回90分キャリア診断 19,800円（通常29,800円）。毎日20:00以降、オンライン対応。">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/career-compass-lockup.png">
-
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="assets/career-compass-lockup.png">
-
 <style>
-body{
-font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
-margin:0;
-color:#1F2937;
-}
+  :root{
+    --navy:#1E2761;
+    --deep-navy:#121A42;
+    --ice:#CADCFC;
+    --coral:#D83A3A; /* cc-red と同じ */
+    --gold:#F9E795;
+    --cc-blue:#2E86D8;
+    --cc-green:#3FA857;
+    --cc-yellow:#F0B328;
+    --cc-red:#D83A3A;
+    --ink:#1F2937;
+    --muted:#64748B;
+    --line:#E2E8F0;
+    --bg:#F5F7FB;
+    --white:#FFFFFF;
+    --radius:14px;
+    --shadow: 0 6px 24px rgba(18,26,66,.08);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family: "Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",system-ui,-apple-system,"Segoe UI",sans-serif;
+    color:var(--ink);background:var(--white);line-height:1.75;
+    -webkit-text-size-adjust:100%;font-feature-settings:"palt";
+  }
+  a{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+  img{max-width:100%;display:block}
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px}
 
-.wrap{
-max-width:720px;
-margin:auto;
-padding:0 20px;
-}
+  /* Brand bar */
+  .brandbar{background:#fff;border-bottom:1px solid var(--line);padding:14px 0}
+  .brandbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brandbar .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy)}
+  .brandbar .logo img{height:36px;width:auto;display:block}
+  .brandbar .tagline{font-size:11.5px;color:var(--muted);letter-spacing:.04em;text-align:right;line-height:1.5}
+  @media (min-width:520px){ .brandbar .logo img{height:42px} }
 
-.brandbar{
-border-bottom:1px solid #eee;
-padding:14px 0;
-}
+  /* Top safety bar */
+  .topbar{
+    background:var(--deep-navy);color:#fff;padding:18px 0;
+    border-bottom:3px solid var(--coral);
+    background-image:
+      linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.15)),
+      radial-gradient(circle at 94% 50%, rgba(240,179,40,.14), transparent 45%),
+      radial-gradient(circle at 0% 50%, rgba(46,134,216,.14), transparent 40%);
+  }
+  .topbar .wrap{display:flex;gap:14px;align-items:flex-start}
+  .topbar .badge{
+    flex:0 0 auto;background:var(--coral);color:#fff;font-weight:700;
+    font-size:12px;letter-spacing:.08em;padding:6px 10px;border-radius:999px;margin-top:2px;
+  }
+  .topbar p{margin:0;font-size:14.5px;line-height:1.7}
+  .topbar strong{color:var(--gold)}
 
-.brandbar .wrap{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
+  /* Hero */
+  .hero{
+    background:linear-gradient(180deg,#121A42 0%, #1E2761 100%);
+    color:#fff;padding:48px 0 48px;position:relative;overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:auto -40px -80px auto;
+    width:260px;height:260px;border-radius:50%;
+    background:rgba(249,97,103,.18);filter:blur(10px);
+  }
+  .hero .mark-bg{
+    position:absolute;right:-80px;top:-30px;
+    width:360px;opacity:.12;pointer-events:none;user-select:none;transform:rotate(-8deg);
+  }
+  .hero .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:11.5px;font-weight:700;letter-spacing:.16em;
+    color:var(--coral);margin-bottom:14px;text-transform:uppercase;
+  }
+  .hero .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(249,231,149,.18)}
+  .hero h1{font-size:30px;line-height:1.45;margin:0 0 18px;font-weight:800;letter-spacing:.01em;position:relative}
+  .hero h1 .accent{color:var(--gold)}
+  .hero .lede{color:var(--ice);font-size:16px;margin:0 0 28px;position:relative}
+  .hero .lede strong{color:#fff}
+  .bullets{margin:0 0 28px;padding:0;list-style:none;display:grid;gap:10px;position:relative}
+  .bullets li{position:relative;padding-left:28px;font-size:15px;color:#fff}
+  .bullets li::before{content:"";position:absolute;left:0;top:.65em;width:14px;height:2px;background:var(--coral)}
+  .bullets li:nth-child(1)::before{background:var(--cc-blue)}
+  .bullets li:nth-child(2)::before{background:var(--cc-green)}
+  .bullets li:nth-child(3)::before{background:var(--cc-yellow)}
 
-.brandbar img{
-height:36px;
-}
+  /* CTA */
+  .cta-wrap{
+    background:var(--white);border-radius:var(--radius);padding:22px;
+    box-shadow:var(--shadow);color:var(--ink);margin:10px 0 0;
+    position:relative;border-top:4px solid var(--coral);
+  }
+  .cta-wrap .price{display:flex;align-items:baseline;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+  .cta-wrap .price .main{font-size:32px;font-weight:800;color:var(--navy);letter-spacing:.01em}
+  .cta-wrap .price .old{font-size:17px;color:var(--muted);text-decoration:line-through;font-weight:600}
+  .cta-wrap .price .unit{font-size:13px;color:var(--muted)}
+  .monitor-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:linear-gradient(90deg,var(--coral),#F07A3A);color:#fff;
+    font-size:11.5px;font-weight:800;letter-spacing:.1em;
+    padding:6px 12px;border-radius:999px;margin-bottom:10px;
+    box-shadow:0 4px 10px rgba(216,58,58,.25);
+  }
+  .monitor-badge .dot{width:6px;height:6px;border-radius:50%;background:#fff;animation:pulse 1.6s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .plan .priceline .old{font-size:17px;color:var(--muted);text-decoration:line-through;font-weight:600;margin-right:4px}
 
-.hero{
-background:#1E2761;
-color:#fff;
-padding:60px 0;
-}
+  /* Referral campaign */
+  .referral{
+    display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;
+    margin:22px 0 18px;
+  }
+  .ref-card{
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:20px 16px;text-align:center;box-shadow:var(--shadow);position:relative;overflow:hidden;
+  }
+  .ref-card::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:4px;
+  }
+  .ref-you::after{background:linear-gradient(90deg,var(--cc-blue),var(--cc-green))}
+  .ref-friend::after{background:linear-gradient(90deg,var(--cc-yellow),var(--cc-red))}
+  .ref-card .ref-label{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.04em;margin-bottom:6px}
+  .ref-card .ref-amount{font-size:30px;font-weight:800;color:var(--navy);line-height:1.1}
+  .ref-card .ref-note{font-size:12px;color:var(--coral);font-weight:700;margin-top:4px}
+  .ref-plus{font-size:22px;font-weight:800;color:var(--coral)}
+  .ref-terms{margin-top:14px}
+  @media (max-width:480px){
+    .referral{grid-template-columns:1fr;gap:8px}
+    .ref-plus{transform:rotate(90deg)}
+  }
+  .cta-wrap .title{font-size:14.5px;font-weight:700;color:var(--navy);margin-bottom:4px}
+  .cta-wrap .meta{font-size:12.5px;color:var(--muted);margin-bottom:16px}
+  .btn{
+    display:block;text-align:center;background:var(--coral);color:#fff;
+    padding:16px 18px;border-radius:12px;font-weight:800;font-size:16px;letter-spacing:.02em;
+    text-decoration:none;box-shadow:0 6px 14px rgba(249,97,103,.35);
+  }
+  .btn:hover{box-shadow:0 8px 18px rgba(249,97,103,.45)}
+  .btn .sub{display:block;font-weight:500;font-size:12px;opacity:.9;margin-top:2px}
 
-.hero h1{
-font-size:32px;
-line-height:1.4;
-margin-bottom:20px;
-}
+  /* Sections */
+  section{padding:56px 0;border-bottom:1px solid var(--line)}
+  section.alt{background:var(--bg)}
+  .kicker{
+    font-size:11.5px;font-weight:700;letter-spacing:.16em;color:var(--coral);
+    margin:0 0 10px;display:flex;align-items:center;gap:10px;
+  }
+  .kicker::before{content:"";width:24px;height:2px;background:var(--coral);display:inline-block}
+  h2{font-size:24px;line-height:1.4;margin:0 0 18px;color:var(--navy);font-weight:800}
+  h3{font-size:17px;margin:28px 0 10px;color:var(--navy);font-weight:700}
+  p{margin:0 0 14px;font-size:15.5px}
 
-.hero p{
-font-size:16px;
-line-height:1.8;
-}
+  /* Pain list */
+  .pains{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+  .pains li{
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:14px 16px 14px 40px;position:relative;font-size:14.5px;
+  }
+  .pains li::before{
+ content:"•";position:absolute;left:18px;top:14px;
+ width:auto;height:auto;border-radius:0;
+ background:transparent;border:0;
+ color:var(--muted);
+ font-size:22px;line-height:1;
+ }
+  .subhead{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 18px 4px;margin-top:18px}
+  .subhead h3{margin-top:0}
 
-.bullets{
-margin:30px 0;
-padding-left:20px;
-}
+  /* Comparison */
+  .compare{margin:18px 0 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+  .compare .row{display:grid;grid-template-columns:1.1fr 1fr;border-top:1px solid var(--line)}
+  .compare .row:first-child{border-top:0}
+  .compare .cell{padding:14px 16px;font-size:14px}
+  .compare .cell.head{background:var(--navy);color:#fff;font-weight:700;font-size:12.5px;letter-spacing:.08em}
+  .compare .cell.ours{background:#FFF1F2;color:var(--navy);font-weight:700}
 
-.bullets li{
-margin-bottom:10px;
-}
+  /* Four pillars with brand quadrant colors */
+  .pillars{display:grid;gap:12px;margin-top:18px}
+  .pillar{
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:18px 18px 16px 18px;position:relative;border-left:4px solid var(--navy);
+  }
+  .pillar:nth-child(1){border-left-color:var(--cc-blue)}
+  .pillar:nth-child(2){border-left-color:var(--cc-green)}
+  .pillar:nth-child(3){border-left-color:var(--cc-yellow)}
+  .pillar:nth-child(4){border-left-color:var(--cc-red)}
+  .pillar .no{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:28px;height:28px;border-radius:50%;
+    background:var(--navy);color:#fff;font-weight:800;font-size:13px;margin-right:10px;
+  }
+  .pillar:nth-child(1) .no{background:var(--cc-blue)}
+  .pillar:nth-child(2) .no{background:var(--cc-green)}
+  .pillar:nth-child(3) .no{background:var(--cc-yellow);color:#1E2761}
+  .pillar:nth-child(4) .no{background:var(--cc-red)}
+  .pillar h3{display:inline-block;margin:0;vertical-align:middle;font-size:16px}
+  .pillar p{margin:8px 0 0;color:var(--ink);font-size:14.5px}
 
-.cta-wrap{
-background:#fff;
-color:#111;
-padding:24px;
-border-radius:12px;
-margin-top:30px;
-}
+  /* Map */
+  .map{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:18px}
+  .map ul{margin:0;padding-left:20px}
+  .map li{margin-bottom:8px;font-size:14.5px}
+  .map li strong{color:var(--navy)}
+  .map .emph{
+    margin-top:14px;padding:12px 14px;border-radius:8px;
+    background:var(--navy);color:#fff;font-weight:700;font-size:14.5px;
+    position:relative;overflow:hidden;
+  }
+  .map .emph::after{
+    content:"";position:absolute;right:-20px;top:-20px;width:80px;height:80px;border-radius:50%;
+    background:radial-gradient(circle,var(--cc-yellow),transparent 70%);opacity:.35;
+  }
 
-.btn{
-display:block;
-background:#D83A3A;
-color:#fff;
-text-align:center;
-padding:16px;
-border-radius:8px;
-text-decoration:none;
-font-weight:700;
-}
+  /* Plan card */
+  .plan{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+  .plan .head{background:var(--navy);color:#fff;padding:18px 20px;position:relative;overflow:hidden}
+  .plan .head::before{
+    content:"";position:absolute;right:-30px;top:-30px;width:120px;height:120px;border-radius:50%;
+    background:radial-gradient(circle,rgba(249,231,149,.25),transparent 70%);
+  }
+  .plan .head .tag{
+    display:inline-block;background:var(--coral);color:#fff;font-size:11px;font-weight:700;
+    letter-spacing:.12em;padding:4px 8px;border-radius:6px;margin-bottom:8px;position:relative;
+  }
+  .plan .head h3{color:#fff;margin:0 0 6px;font-size:20px;position:relative}
+  .plan .head .sub{color:var(--ice);font-size:13px;margin:0;position:relative}
+  .plan .body{padding:18px 20px}
+  .plan .list{margin:0 0 14px;padding:0;list-style:none;display:grid;gap:8px}
+  .plan .list li{padding-left:24px;position:relative;font-size:14.5px}
+  .plan .list li::before{content:"";position:absolute;left:0;top:.6em;width:14px;height:2px;background:var(--coral)}
+  .plan .priceline{display:flex;align-items:baseline;gap:8px;padding:14px 0;border-top:1px dashed var(--line)}
+  .plan .priceline .main{font-size:28px;font-weight:800;color:var(--navy)}
+  .plan .priceline .unit{color:var(--muted);font-size:13px}
+  .plan.small .head{background:#fff;color:var(--navy);border-bottom:1px solid var(--line)}
+  .plan.small .head::before{display:none}
+  .plan.small .head h3{color:var(--navy)}
+  .plan.small .head .tag{background:var(--navy)}
+  .plan.small .head .sub{color:var(--muted)}
 
-.btn span{
-display:block;
-font-size:12px;
-opacity:0.85;
-}
+  /* FAQ */
+  details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:10px}
+  details[open]{border-color:var(--navy)}
+  summary{cursor:pointer;font-weight:700;color:var(--navy);font-size:15px;list-style:none;position:relative;padding-right:28px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";position:absolute;right:0;top:-2px;font-size:22px;color:var(--coral);font-weight:800}
+  details[open] summary::after{content:"−"}
+  details p{margin:10px 0 0;font-size:14.5px}
 
-section{
-padding:60px 0;
-}
+  /* Profile */
+  .profile{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:18px}
+  .profile ul{margin:0 0 14px;padding-left:20px}
+  .profile li{margin-bottom:6px;font-size:14.5px}
+  .stat{
+    margin-top:12px;padding:16px;border-radius:10px;background:var(--bg);text-align:center;
+    background-image:linear-gradient(120deg, rgba(46,134,216,.07), rgba(240,179,40,.07));
+  }
+  .stat .num{font-size:22px;font-weight:800;color:var(--navy)}
+  .stat .num .big{font-size:30px;color:var(--coral)}
+  .stat .cap{font-size:12.5px;color:var(--muted);margin-top:4px}
 
-section.alt{
-background:#F5F7FB;
-}
+  /* Closing */
+  .close{
+    background:linear-gradient(180deg,#1E2761 0%, #121A42 100%);
+    color:#fff;padding:48px 0 56px;text-align:center;position:relative;overflow:hidden;
+  }
+  .close::before{
+    content:"";position:absolute;left:50%;top:-40px;transform:translateX(-50%);
+    width:220px;height:220px;border-radius:50%;
+    background:radial-gradient(circle, rgba(249,231,149,.14), transparent 65%);
+  }
+  .close .cmark{width:56px;height:56px;margin:0 auto 14px;opacity:.95;position:relative}
+  .close h2{color:#fff;font-size:24px;margin-bottom:10px;position:relative}
+  .close p{color:var(--ice);font-size:15px;margin-bottom:24px;position:relative}
+  .close .btn{display:inline-block;min-width:80%;position:relative}
 
-.kicker{
-font-size:12px;
-letter-spacing:0.1em;
-color:#D83A3A;
-margin-bottom:10px;
-}
+  /* Disclaimer */
+  .disc{background:#0b1233;color:#aeb8d6;padding:34px 0 48px;font-size:12.5px;line-height:1.8}
+  .disc .wordmark{margin-bottom:16px}
+  .disc .wordmark img{height:22px;filter:brightness(1.3) saturate(1.05);opacity:.95}
+  .disc h3{color:#fff;font-size:14px;margin:0 0 10px}
+  .disc ul{margin:0 0 14px;padding-left:20px}
+  .disc li{margin-bottom:4px}
+  .disc .copy{color:#7b86ab;font-size:11.5px;margin-top:12px}
 
-h2{
-font-size:24px;
-margin-bottom:20px;
-}
-
-.pains{
-padding-left:20px;
-}
-
-.pains li{
-margin-bottom:10px;
-}
-
-footer{
-font-size:13px;
-color:#666;
-padding:40px 0;
-}
-
-.sticky{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-background:#fff;
-border-top:1px solid #eee;
-padding:10px;
-}
-
-.sticky a{
-background:#D83A3A;
-color:#fff;
-padding:10px 14px;
-border-radius:8px;
-text-decoration:none;
-}
-
+  /* Sticky CTA (mobile) */
+  .sticky{
+    position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);
+    border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0));
+    backdrop-filter:saturate(180%) blur(8px);z-index:20;
+  }
+  .sticky .row{display:flex;align-items:center;gap:12px;max-width:720px;margin:0 auto}
+  .sticky .meta{flex:1;min-width:0}
+  .sticky .meta .t{font-size:12px;color:var(--muted);line-height:1.4}
+  .sticky .meta .p{font-size:16px;font-weight:800;color:var(--navy);line-height:1.3}
+  .sticky a{
+    flex:0 0 auto;background:var(--coral);color:#fff;font-weight:800;font-size:14px;
+    padding:12px 16px;border-radius:10px;text-decoration:none;
+    box-shadow:0 4px 10px rgba(249,97,103,.35);white-space:nowrap;
+  }
+  body{padding-bottom:88px}
+  @media (min-width:860px){
+    body{padding-bottom:0}
+    .sticky{display:none}
+    .hero{padding:80px 0 64px}
+    .hero h1{font-size:36px}
+    h2{font-size:28px}
+  }
+  a:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 </style>
 </head>
-
 <body>
 
-<div class="brandbar">
-<div class="wrap">
-assets/career-compass-lockup.png
-<div>Career Compass</div>
-</div>
-</div>
-
-
-<section class="hero">
-
-<div class="wrap">
-
-<h1>
-中堅ITキャリアの<br>
-選択肢と市場価値
-</h1>
-
-<p>
-浪人 → 三流大学 → 留年 → SIer → 事業会社IT → 外資 → GAFAMクラス。<br>
-初任給20万円（年収380万円）からスタートし、  
-狙う<strong>市場・企業・職種</strong>を見直し続けたことで、  
-評価のされ方と年収が大きく変わりました。
-</p>
-
-<ul class="bullets">
-
-<li>どこで戦えば評価されるのか</li>
-<li>どんな経験が市場価値になるのか</li>
-<li>どの職種・企業を選ぶと年収が伸びるのか</li>
-
-</ul>
-
-<div class="cta-wrap">
-
-<div>【初回】90分キャリア診断</div>
-
-<div>
-<span style="text-decoration:line-through">¥29,800</span>
-<strong>¥19,800</strong>
-（モニター価格）
+<div class="brandbar" role="banner">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Career Compass">
+      <img src="../assets/career-compass-lockup.png" alt="Career Compass">
+    </a>
+    <div class="tagline">独立型キャリア相談<br>Independent Career Consulting</div>
+  </div>
 </div>
 
-https://mosh.jp/services/361716
-90分キャリア診断
-<span>空き枠を見る</span>
-</a>
+<header class="topbar">
+  <div class="wrap">
+    <span class="badge">安心</span>
+    <p>
+      私は<strong>企業から報酬をいただいておりません。</strong>
+      ご相談者からの相談料のみで運営しておりますので、特定の求人を勧めたり、転職を急かしたりする必要がありません。
+      あなたにとって一番<strong>後悔しにくい</strong>選択を一緒に考えることに、100%時間を使えます。
+    </p>
+  </div>
+</header>
 
-</div>
+<section class="hero" id="top" aria-labelledby="h-title">
+  <img class="mark-bg" src="../assets/career-compass-mark.png" alt="" aria-hidden="true">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>Career Compass ｜ FOR MID-CAREER IT</span>
+    <h1 id="h-title">
+      働き方と給料は努力量では変わらない。年収380万円から<strong>GAFAM</strong>へ
+    </h1>
+    <p class="lede">
+      私自身、初任給20万円（年収380万円）から、<strong>狙うべき市場と職種を模索し続けた結果</strong>、いまがあります。
+      昔の自分は「外資？GAFAMクラス？自分には縁のない話だ」と思ってました。
+      でも、やみくもに頑張るのをやめて、<strong>“狙う市場”“狙う職種”</strong>を選び直したら、状況が変わりだしました。
+    </p>
 
-</div>
+    <ul class="bullets" aria-label="考えてきたこと">
+      <li>どこで戦えば評価されるのか</li>
+      <li>どう見せれば自分の経験が価値になるのか</li>
+      <li>今どこを狙えば年収が上がる（≒市場価値が高い）のか</li>
+    </ul>
+
+    <div class="cta-wrap" role="group" aria-label="予約">
+      <div class="monitor-badge"><span class="dot"></span>モニター募集中 ｜ 先着限定</div>
+      <div class="title">【初回】90分キャリア診断</div>
+      <div class="price">
+        <span class="old">¥29,800</span>
+        <span class="main">¥19,800</span>
+        <span class="unit">税込 / 単発（モニター価格）</span>
+      </div>
+      <div class="meta">毎日 20:00以降オンライン（Zoom）／チャット：LINE・Slack・Discord</div>
+      <a class="btn" href="https://mosh.jp/services/361716" aria-label="初回90分キャリア診断を予約する">
+        90分キャリア診断を予約する
+        <span class="sub">空き枠を見て予約する</span>
+      </a>
+    </div>
+  </div>
 </section>
-
 
 <section class="alt">
+  <div class="wrap">
+    <p class="kicker">02  こんな状態、心当たりありませんか？</p>
+    <h2>中堅ITで、給料が伸び悩んでいる。</h2>
 
-<div class="wrap">
+    <ul class="pains">
+      <li>上司や先輩を見ても、数年後の自分に希望が持てない</li>
+      <li>成果を出しても、年収や裁量が想像以上に増えない</li>
+      <li>転職サイトやエージェントがしんどい（急かされる／話が噛み合わない／求人がピンとこない）</li>
+      <li>職務経歴書が通らず、自信をなくしている</li>
+      <li>「日本企業の空気」が合わないと感じている</li>
+    </ul>
 
-<div class="kicker">02 ITキャリアの停滞</div>
-
-<h2>
-中堅ITキャリア、給料が伸び悩んでいませんか。
-</h2>
-
-<ul class="pains">
-
-<li>上司や先輩を見ても、数年後の自分に希望が持てない</li>
-<li>成果を出しても、年収や裁量が想像以上に増えない</li>
-<li>転職サイトやエージェントがしんどい</li>
-<li>職務経歴書が通らず、自信をなくしている</li>
-<li>会社の評価基準が曖昧で、何を積めば伸びるのか見えない</li>
-
-</ul>
-
-</div>
-
+    <div class="subhead">
+      <h3>日本企業の“空気”に疲れていませんか？</h3>
+      <ul class="pains" style="padding:0">
+        <li>実力と実績より、<strong>年次や上位者の印象</strong>が優先される</li>
+        <li>指示待ちが安全で、勝手に動くと怒られる</li>
+        <li>会議では空気が先で、議論が後</li>
+        <li>役員は神様のように扱われ、距離が遠い</li>
+        <li>評価のルールが曖昧で、何を積めば年収が上がるか見えない</li>
+      </ul>
+      <p style="margin-top:14px">
+        <strong>これはあなたの能力不足ではありません。</strong><br>
+        評価軸・働き方・カルチャーの問題です。
+      </p>
+    </div>
+  </div>
 </section>
-
 
 <section>
+  <div class="wrap">
+    <p class="kicker">03  既存サービスとの違い</p>
+    <h2>転職エージェントと、Career Compassの違い。</h2>
+    <p>
+      転職エージェントは、仕組みとして「採用が決まると企業側から報酬が発生する」ことが多いです。
+      <strong>それ自体は悪いことではありません。
+ただ、仕組み上どうしても「今このタイミングでこの企業へ」が成果になりやすい</strong>場面が出ます。
+    </p>
+    <p>
+      一方で Career Compass は、企業側からの報酬がありません。特定の求人へ寄せる理由もなければ、転職を急がせる理由もない。
+      あなたの<strong>希望する将来</strong>を優先して、一緒に考えられます。
+    </p>
 
-<div class="wrap">
-
-<h2>プロフィール</h2>
-
-<ul>
-
-<li>浪人 → 三流大学 → 留年 → 卒業</li>
-<li>新卒SIer</li>
-<li>事業会社IT</li>
-<li>外資ソフトウェア企業</li>
-<li>GAFAMクラス</li>
-
-</ul>
-
-<p>
-初任給年収380万円 → 年収2,000万円以上
-</p>
-
-</div>
-
+    <div class="compare" aria-label="比較表">
+      <div class="row">
+        <div class="cell head">一般的な転職エージェント</div>
+        <div class="cell head ours" style="background:var(--coral)">Career Compass（独立型）</div>
+      </div>
+      <div class="row">
+        <div class="cell">入社してもらいたい企業を優先提案</div>
+        <div class="cell ours">相談者にとって最適な業界・職種を提案</div>
+      </div>
+      <div class="row">
+        <div class="cell">“今このタイミング"で転職させる</div>
+        <div class="cell ours">“最適な転職タイミング"を提案</div>
+      </div>
+      <div class="row">
+        <div class="cell">求人紹介・選考通過の支援</div>
+        <div class="cell ours">市場選定・強味アピール方法をレクチャー</div>
+      </div>
+      <div class="row">
+        <div class="cell">“転職しない"という提案は基本なし</div>
+        <div class="cell ours">“今は動かない判断”も提案</div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<section class="alt">
+  <div class="wrap">
+    <p class="kicker">04  4 COMPASS POINTS ｜ 提供するもの</p>
+    <h2>「キャリアの設計」と「外資基準の翻訳」。</h2>
+    <p>
+      Career Compass は求人紹介（斡旋）はしません。企業から紹介料ももらいません。
+      そのかわりにやるのは、あなたの状況を整理して——
+    </p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <span class="no">N</span><h3>狙うべき市場を一緒に選ぶ</h3>
+        <p>企業群／業界／職種の優先順位を、希望と強みから一緒に絞り込みます。</p>
+      </div>
+      <div class="pillar">
+        <span class="no">E</span><h3>経験を「外資基準」に翻訳する</h3>
+        <p>あなたの経験を、外資・大手が理解できる言葉へ。実績の数値化・ストーリー構造化までやります。</p>
+      </div>
+      <div class="pillar">
+        <span class="no">S</span><h3>職務経歴書・面接・ストーリーを整える</h3>
+        <p>勝率の高い形へ。書類と面接対策をセットで設計します。</p>
+      </div>
+      <div class="pillar">
+        <span class="no">W</span><h3>“いつ”動くか、の判断</h3>
+        <p>転職するなら今か、もう少し積んでからか。動かない判断も含めて、一緒に決めます。</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section>
+  <div class="wrap">
+    <p class="kicker">05  REAL TWO-AXIS MAP</p>
+    <h2>負荷 × 年収 × 裁量。「大変さ × 給料」だけでは足りない。</h2>
 
-<div class="wrap">
-
-<h2>キャリア相談</h2>
-
-<p>
-キャリア相談・選択肢整理・外資/ITキャリア戦略
-</p>
-
-https://mosh.jp/services/361716
-90分キャリア診断
-<span>予約ページへ</span>
-</a>
-
-</div>
-
+    <div class="map">
+      <ul>
+        <li>同じ大変さでも、<strong>年収の伸び方</strong>が違う</li>
+        <li>同じ年収でも、<strong>裁量（自由度）</strong>が違う</li>
+        <li>同じ裁量でも、<strong>求められる思考の質</strong>が違う</li>
+      </ul>
+      <p style="margin:12px 0 0">
+        あなたの希望（<strong>年収・働き方・ワークライフバランス</strong>）と、強み・性格を踏まえて、
+        どこを目指すのが合っているかを一緒に整理します。
+      </p>
+      <div class="emph">やり方を変えれば、結果は変わります。</div>
+    </div>
+  </div>
 </section>
 
+<section class="alt" id="reserve">
+  <div class="wrap">
+    <p class="kicker">06  ENTRY MENU</p>
+    <h2>【初回】90分キャリア診断。まずはここだけでOK。</h2>
+
+    <article class="plan">
+      <div class="head">
+        <span class="tag">ENTRY ／ モニター募集中</span>
+        <h3>市場選び／職務経歴書の方向性／外資対策</h3>
+        <p class="sub">この90分で、向こう3ヶ月の道筋を一緒につくります。</p>
+      </div>
+      <div class="body">
+        <h3 style="margin-top:0">この90分でやること</h3>
+        <ul class="list">
+          <li>現状の棚卸し（何が武器で、何が弱点か）</li>
+          <li>狙う市場と職種の優先順位づけ</li>
+          <li>職務経歴書の「外資／大手が読む形」への翻訳方針</li>
+          <li>面接で刺さるストーリーの骨子づくり</li>
+          <li>次の3ヶ月の行動計画を作る（納品）</li>
+        </ul>
+
+        <h3>含まれるもの</h3>
+        <ul class="list">
+          <li>事前アンケート（15分）</li>
+          <li>90分オンライン（20:00以降対応）</li>
+          <li>納品：3ヶ月の行動計画（1枚）</li>
+          <li>7日間チャット（1日1往復／20:00〜23:00）</li>
+        </ul>
+
+        <div class="priceline">
+          <span class="old">¥29,800</span>
+          <span class="main">¥19,800</span>
+          <span class="unit">税込 / 単発（モニター価格）</span>
+        </div>
+        <p style="font-size:12.5px;color:var(--muted);margin:-4px 0 14px">
+          ※ サービス開始記念・先着モニター募集につき特別価格。予告なく終了します。
+        </p>
+        <a class="btn" href="https://mosh.jp/services/361716" aria-label="90分キャリア診断を予約する">
+          90分キャリア診断を予約する
+          <span class="sub">毎日 20:00以降（オンライン）</span>
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
 
 <section>
+  <div class="wrap">
+    <p class="kicker">07  CONTINUATION</p>
+    <h2>継続メニュー（ご希望の方のみ）</h2>
+    <p style="color:var(--muted)">※ 必要な方のみにご案内しております。強制ではございません。</p>
 
-<div class="wrap">
+    <article class="plan small">
+      <div class="head">
+        <span class="tag">OPTION A</span>
+        <h3>職務経歴書「外資基準」刷新（2週間）</h3>
+        <p class="sub">添削2回、実績の数字化／ストーリー構造化まで。</p>
+      </div>
+      <div class="body">
+        <ul class="list">
+          <li>添削2回（Google Doc赤入れ）</li>
+          <li>実績の数字化／ストーリー構造化</li>
+          <li>チャット2週間（平日1日1往復）</li>
+        </ul>
+        <div class="priceline">
+          <span class="main">¥79,800</span>
+          <span class="unit">税込 / 2週間</span>
+        </div>
+      </div>
+    </article>
 
-<h2>お問い合わせ</h2>
-
-https://formspree.io/f/YOUR_ID
-
-<input type="text" name="name" placeholder="お名前"><br><br>
-
-<input type="email" name="email" placeholder="メール"><br><br>
-
-<textarea name="message" placeholder="お問い合わせ"></textarea><br><br>
-
-<button type="submit">送信</button>
-
-</form>
-
-</div>
-
+    <article class="plan small">
+      <div class="head">
+        <span class="tag">OPTION B</span>
+        <h3>伴走（4〜8週）</h3>
+        <p class="sub">書類・面接・志望動機・応募戦略まで、並走します。</p>
+      </div>
+      <div class="body">
+        <ul class="list">
+          <li>週1回45分（または隔週60分）</li>
+          <li>書類・面接・志望動機の整備</li>
+          <li>面接ロープレ</li>
+          <li>応募戦略・改善</li>
+        </ul>
+        <div class="priceline">
+          <span class="main">¥149,000〜</span>
+          <span class="unit">税込 / 月</span>
+        </div>
+      </div>
+    </article>
+  </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <p class="kicker">08  REFERRAL CAMPAIGN</p>
+    <h2>ご紹介で Amazonギフト券 3,000円プレゼント。</h2>
+    <p>
+      知人・同僚・ご友人に Career Compass をご紹介いただき、<strong>90分キャリア診断のご相談が成立</strong>した場合、
+      <strong>紹介者・ご相談者の双方に Amazonギフト券 3,000円分</strong>をプレゼントします。
+    </p>
 
-<footer>
+    <div class="referral">
+      <div class="ref-card ref-you">
+        <div class="ref-label">紹介してくださった方</div>
+        <div class="ref-amount">¥3,000</div>
+        <div class="ref-note">Amazonギフト券</div>
+      </div>
+      <div class="ref-plus">＋</div>
+      <div class="ref-card ref-friend">
+        <div class="ref-label">ご紹介で来られた方</div>
+        <div class="ref-amount">¥3,000</div>
+        <div class="ref-note">Amazonギフト券</div>
+      </div>
+    </div>
 
-<div class="wrap">
+    <ul class="list ref-terms">
+      <li>ご予約時に「<strong>ご紹介コード</strong>」をお伝えください</li>
+      <li>対象：初回90分キャリア診断を実施された方（モニター価格 ¥19,800 対象）</li>
+      <li>ギフトコードは実施後メールでお送りします</li>
+      <li>ご紹介人数に上限はありません</li>
+    </ul>
+  </div>
+</section>
 
-<p>
-Career Compass
-</p>
+<section class="alt">
+  <div class="wrap">
+    <p class="kicker">09  FAQ</p>
+    <h2>よくある質問</h2>
 
-</div>
+    <details>
+      <summary>本当に年収は上がりますか？</summary>
+      <p>結果には個人差があります。ただ、<strong>年収を上げる方法はあります。</strong>
+        ポイントは「どの市場を狙うか／どんな実績を積むか／どう伝えるか」の3つを合わせること。
+        年収を優先したい場合は、どの領域（企業・職種など）にアプローチすべきか、オファーで損しないための交渉の進め方も具体的にお伝えします。
+        <strong>今は転職しない／いつ転職すべきか</strong>の判断も含めて、遠慮なくお話しください。</p>
+    </details>
 
+    <details>
+      <summary>転職サイトやエージェントが苦手です。</summary>
+      <p>大丈夫です。Career Compass は企業から報酬を受け取らない独立型なので、特定の求人へ誘導する理由がありません。
+        100%あなただけのことを考えてあなたにとって最適な選択をお手伝いします。</p>
+    </details>
+
+    <details>
+      <summary>外資は英語ができないと無理ですか？</summary>
+      <p>職種と企業によります。必要水準は一律ではありません。あなたの状況から、勝ち目のある選択肢を整理します。</p>
+    </details>
+
+    <details>
+      <summary>相談はLINEですか？</summary>
+      <p>LINE／Slack／Discord／メール／SMSなど対応可能です。品質維持のため、原則 <strong>1日1往復／20:00〜23:00</strong> です。</p>
+    </details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="kicker">10  PROFILE</p>
+    <h2>プロフィール</h2>
+
+    <div class="profile">
+      <ul>
+        <li>浪人 → 三流大学 → 留年 → 卒業</li>
+        <li>新卒SIer（開発、PM）</li>
+        <li>事業会社IT部門（開発、PM）</li>
+        <li>外資ソフトウェアベンダー（プリセールス／データ分析）</li>
+        <li>GAFAM企業へ</li>
+      </ul>
+      <div class="stat">
+        <div class="num">初任給 年収380万円 → <span class="big">38歳で年収2,000万円超</span></div>
+        <div class="cap">狙う市場を模索し続け、働き方を選び直した結果、“自分にあった”働き方に。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <img class="cmark" src="../assets/career-compass-mark.png" alt="">
+    <h2>今の延長に希望が見えない、現状を変えたいなら、<br>一度キャリアの地図を引き直しませんか。</h2>
+    <p>未来を変えるのは、努力量だけじゃない。<br><strong style="color:#fff">狙う市場・職種・評価軸</strong>です。</p>
+    <a class="btn" href="https://mosh.jp/services/361716">
+      90分キャリア診断を予約する
+      <span class="sub">毎日 20:00以降（オンライン）</span>
+    </a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="kicker">CONTACT</p>
+    <h2>お問い合わせ</h2>
+    <p>相談前に確認しておきたいことがあればお気軽にどうぞ。</p>
+
+    <form action="https://formspree.io/f/YOUR_ID" method="POST" style="display:grid;gap:12px;margin-top:20px">
+      <input type="text" name="name" placeholder="お名前" required style="padding:12px;border:1px solid #E2E8F0;border-radius:8px">
+      <input type="email" name="email" placeholder="メールアドレス" required style="padding:12px;border:1px solid #E2E8F0;border-radius:8px">
+      <textarea name="message" rows="5" placeholder="お問い合わせ内容" required style="padding:12px;border:1px solid #E2E8F0;border-radius:8px"></textarea>
+      <button type="submit" class="btn">送信</button>
+    </form>
+  </div>
+</section>
+
+<footer class="disc" role="contentinfo">
+  <div class="wrap">
+    <div class="wordmark"><img src="../assets/career-compass-wordmark.png" alt="Career Compass"></div>
+    <ul>
+      <li>本サービスはキャリア相談・書類添削・面接対策であり、職業紹介（求人の斡旋・紹介）ではありません。</li>
+      <li>企業から紹介料・報酬を受け取らない独立型のサービスです。</li>
+      <li>結果は個人差があり、年収・内定等を保証するものではありません。</li>
+      <li>守秘義務を遵守し、許可なく相談内容を第三者へ開示しません。</li>
+    </ul>
+    <div class="copy">© Career Compass</div>
+  </div>
 </footer>
 
-
 <div class="sticky">
-
-https://mosh.jp/services/361716
-90分キャリア診断
-</a>
-
+  <div class="row">
+    <div class="meta">
+      <div class="t">【モニター募集中】90分キャリア診断</div>
+      <div class="p">¥19,800 <span style="font-size:12px;font-weight:600;color:#64748B;text-decoration:line-through;margin-left:2px">¥29,800</span></div>
+    </div>
+    <a href="https://mosh.jp/services/361716" aria-label="予約する">予約する</a>
+  </div>
 </div>
 
 </body>
