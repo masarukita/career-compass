@@ -139,10 +139,6 @@
   .ref-card .ref-note{font-size:12px;color:var(--coral);font-weight:700;margin-top:4px}
   .ref-plus{font-size:22px;font-weight:800;color:var(--coral)}
   .ref-terms{margin-top:14px}
-  @media (max-width:480px){
-    .referral{grid-template-columns:1fr;gap:8px}
-    .ref-plus{transform:rotate(90deg)}
-  }
   .cta-wrap .title{font-size:14.5px;font-weight:700;color:var(--navy);margin-bottom:4px}
   .cta-wrap .meta{font-size:12.5px;color:var(--muted);margin-bottom:16px}
   .btn{
@@ -321,6 +317,50 @@
     h2{font-size:28px}
   }
   a:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+
+/* --- Mobile layout fixes (v8) --- */
+html{overflow-x:hidden}
+body{overflow-x:hidden}
+/* Long Japanese/URLs: prevent horizontal scroll */
+*,*::before,*::after{overflow-wrap:anywhere;word-break:break-word}
+
+@media (max-width:560px){
+  /* Header/brand bar stack */
+  .brandbar .wrap{flex-direction:column;align-items:flex-start}
+  .brandbar .tagline{text-align:left}
+
+  /* Safety bar stack */
+  .topbar .wrap{flex-direction:column;gap:10px}
+  .topbar .badge{margin-top:0}
+}
+
+@media (max-width:420px){
+  /* Hero spacing */
+  .hero{padding:40px 0 44px}
+  .hero h1{font-size:28px}
+  .hero .lede{font-size:15px}
+  .bullets li{font-size:14.5px}
+
+  /* Price line: avoid cramped wrap */
+  .cta-wrap .price{gap:6px}
+  .cta-wrap .price .old{order:1;width:100%}
+  .cta-wrap .price .main{order:2}
+  .cta-wrap .price .unit{order:3;width:100%}
+}
+
+/* Referral section: keep '+' between cards on mobile */
+@media (max-width:480px){
+  .referral{display:flex;flex-direction:column;align-items:stretch;gap:10px}
+  .ref-plus{transform:none;line-height:1;margin:2px auto 2px;order:2}
+  .ref-you{order:1}
+  .ref-friend{order:3}
+}
+
+/* Sticky CTA: keep safe-area and avoid overlap */
+body{padding-bottom:calc(96px + env(safe-area-inset-bottom,0))}
+.sticky{padding:10px 16px calc(10px + env(safe-area-inset-bottom,0))}
+
 </style>
 </head>
 <body>
@@ -726,3 +766,4 @@
 
 </body>
 </html>
+
