@@ -323,8 +323,6 @@
 html{overflow-x:hidden}
 body{overflow-x:hidden}
 /* Long Japanese/URLs: prevent horizontal scroll */
-*,*::before,*::after{overflow-wrap:anywhere;word-break:break-word}
-
 @media (max-width:560px){
   /* Header/brand bar stack */
   .brandbar .wrap{flex-direction:column;align-items:flex-start}
@@ -347,12 +345,15 @@ body{overflow-x:hidden}
   .cta-wrap .price .old{order:1;width:100%}
   .cta-wrap .price .main{order:2}
   .cta-wrap .price .unit{order:3;width:100%}
+    .stat .num{
+    font-size:20px;
+  }
+  .stat .num .big{
+    font-size:24px;
+  }
 }
 
-/* Referral section: keep '+' between cards on mobile */
-@media (max-width:480px){
-  .referral{display:flex;flex-direction:column;align-items:stretch;gap:10px}
-  .ref-plus{transform:none;line-height:1;margin:2px auto 2px;order:2}
+.ref-plus{transform:none;line-height:1;margin:2px auto 2px;order:2}
   .ref-you{order:1}
   .ref-friend{order:3}
 }
@@ -360,6 +361,151 @@ body{overflow-x:hidden}
 /* Sticky CTA: keep safe-area and avoid overlap */
 body{padding-bottom:calc(96px + env(safe-area-inset-bottom,0))}
 .sticky{padding:10px 16px calc(10px + env(safe-area-inset-bottom,0))}
+
+/* 画面が狭い場合は文字サイズだけ調整 */
+@media (max-width:420px){
+  .stat .num{
+    font-size:20px;
+  }
+  .stat .num .big{
+    font-size:24px;
+  }
+}
+
+/* ===== Mobile: 数字は壊さず、切れは防ぐ（v10パッチ） ===== */
+
+/* 価格：数字は途中で割らない */
+.cta-wrap .price .old,
+.cta-wrap .price .main,
+.cta-wrap .price .unit,
+.plan .priceline .old,
+.plan .priceline .main {
+  white-space: nowrap;
+}
+
+/* プロフィール実績：親は折り返しOK（切れ防止） */
+.stat .num{
+  white-space: normal;
+}
+
+/* 数字を壊したくない部分だけ nowrap（ただしスマホでは次行に落とす） */
+.stat .num .big{
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* 画面が狭いときは「赤い部分」を次の行へ落として切れを防ぐ */
+@media (max-width: 420px){
+  .stat .num{
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  .stat .num .big{
+    display: block;      /* ←ここが重要：切れるなら次の行に落とす */
+    margin-top: 6px;
+    font-size: 24px;
+  }
+
+  /* 価格：単発(モニター価格)は次の行へ、数字は壊さない */
+  .cta-wrap .price{
+    gap: 6px;
+  }
+  .cta-wrap .price .unit{
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px){
+  .stat .num{ font-size: 17px; }
+  .stat .num .big{ font-size: 22px; }
+}
+
+/* 価格行レイアウト調整 */
+.cta-wrap .price {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cta-wrap .price .old,
+.cta-wrap .price .main {
+  white-space: nowrap;   /* 数字は分断しない */
+}
+
+.cta-wrap .price .unit {
+  white-space: normal;   /* ←ここがポイント：折り返し許可 */
+  width: 100%;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* priceの説明部分は折り返し可能にする */
+.cta-wrap .price .unit{
+  white-space: normal;
+  display:block;
+  margin-top:4px;
+}
+
+
+
+/* ===== Mobile wrapping fix pack (v10 clean) ===== */
+html, body { overflow-x: hidden; }
+
+/* --- Price line: keep numbers intact, but allow the description to wrap --- */
+.cta-wrap .price { display:flex; flex-wrap:wrap; align-items:baseline; gap:8px; }
+.cta-wrap .price .old,
+.cta-wrap .price .main { white-space: nowrap; }
+.cta-wrap .price .unit { 
+  flex: 0 0 100%; 
+  width: 100%;
+  white-space: normal; 
+  display:block; 
+  margin-top:4px;
+}
+
+/* Same treatment in ENTRY MENU price line */
+.plan .priceline { display:flex; flex-wrap:wrap; align-items:baseline; gap:8px; }
+.plan .priceline .old,
+.plan .priceline .main { white-space: nowrap; }
+.plan .priceline .unit { flex: 0 0 100%; width:100%; white-space: normal; display:block; margin-top:4px; }
+
+/* --- Profile stat: avoid clipping by allowing wrap; stack the red part on small screens --- */
+.stat .num { white-space: normal; }
+.stat .num .big { white-space: nowrap; display:inline-block; }
+
+@media (max-width: 420px) {
+  .cta-wrap .price .main { font-size:30px; }
+  .plan .priceline .main { font-size:26px; }
+
+  .stat .num { font-size:18px; line-height:1.4; }
+  .stat .num .big { display:block; margin-top:6px; font-size:24px; }
+}
+
+@media (max-width: 360px) {
+  .cta-wrap .price .main { font-size:28px; }
+  .stat .num { font-size:17px; }
+  .stat .num .big { font-size:22px; }
+}
+
+/* --- Header stacks nicely on small screens --- */
+@media (max-width: 560px) {
+  .brandbar .wrap { flex-direction: column; align-items: flex-start; }
+  .brandbar .tagline { text-align: left; }
+  .topbar .wrap { flex-direction: column; gap: 10px; }
+  .topbar .badge { margin-top: 0; }
+}
+
+/* --- Referral '+' stays between cards on mobile --- */
+@media (max-width: 480px) {
+  .referral { display:flex; flex-direction:column; align-items:stretch; gap:10px; }
+  .ref-you { order:1; }
+  .ref-plus { order:2; transform:none; line-height:1; margin:2px auto; }
+  .ref-friend { order:3; }
+}
+
+/* --- Sticky CTA safe-area --- */
+body { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0)); }
+.sticky { padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0)); }
 
 </style>
 </head>
@@ -457,7 +603,7 @@ body{padding-bottom:calc(96px + env(safe-area-inset-bottom,0))}
     <h2>転職エージェントと、Career Compassの違い。</h2>
     <p>
       転職エージェントは、仕組みとして「採用が決まると企業側から報酬が発生する」というビジネスモデルです。
-      そのためどうしても</strong>「なるべく早く優先すべき企業へ」が転職エージェントの成果になりやすい</strong>という特性があります。
+      そのためどうしても<strong>「なるべく早く優先すべき企業へ」</strong>が転職エージェントの成果になりやすい</strong>という特性があります。
     </p>
     <p>
       一方で Career Compass は、企業側からの報酬がありません。よって特定の求人へ寄せる理由もなければ、転職を急がせる理由もない。
@@ -766,4 +912,3 @@ body{padding-bottom:calc(96px + env(safe-area-inset-bottom,0))}
 
 </body>
 </html>
-
