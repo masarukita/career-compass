@@ -1,12 +1,12 @@
 {
-  "rewrites": [
+  "routes": [
     {
-      "source": "/uchinoko-navi",
-      "destination": "https://uchinoko-navi-obxczimqi.vercel.app"
+      "src": "^/uchinoko-navi/?$",
+      "dest": "https://uchinoko-navi-obxczimqi.vercel.app/"
     },
     {
-      "source": "/uchinoko-navi/:path*",
-      "destination": "https://uchinoko-navi-obxczimqi.vercel.app/:path*"
+      "src": "^/uchinoko-navi/(.*)",
+      "dest": "https://uchinoko-navi-obxczimqi.vercel.app/$1"
     }
   ]
 }
